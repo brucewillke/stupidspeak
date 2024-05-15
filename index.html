@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StupidSpeak</title>
+    <title>Randomize Letter Case</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,7 +47,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>StupidSpeak</h1>
+        <h1>Randomize Letter Case</h1>
         <form id="textForm">
             <textarea id="inputText" rows="4" placeholder="Enter your text here"></textarea><br>
             <button type="button" onclick="processText()">Submit</button>
@@ -60,7 +60,7 @@
             const inputText = document.getElementById('inputText').value;
             let result = '';
             for (let i = 0; i < inputText.length; i++) {
-                if (i % 2 === 0) {
+                if (Math.random() > 0.5) {
                     result += inputText[i].toUpperCase();
                 } else {
                     result += inputText[i].toLowerCase();
