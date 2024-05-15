@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize Every Other Letter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Capitalize Every Other Letter</h1>
+        <form id="textForm">
+            <textarea id="inputText" rows="4" placeholder="Enter your text here"></textarea><br>
+            <button type="button" onclick="processText()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function processText() {
+            const inputText = document.getElementById('inputText').value;
+            let result = '';
+            for (let i = 0; i < inputText.length; i++) {
+                if (i % 2 === 0) {
+                    result += inputText[i].toUpperCase();
+                } else {
+                    result += inputText[i].toLowerCase();
+                }
+            }
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>
